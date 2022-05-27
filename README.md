@@ -17,5 +17,4 @@ jupyter notebook
 # to use jupytext with a notebook
 # associate a script with your Jupyter Notebook by adding this line to your notebook metadata
 "jupytext_formats": "ipynb,py",     # .py can be replaced with most other extensions
-
 ```
