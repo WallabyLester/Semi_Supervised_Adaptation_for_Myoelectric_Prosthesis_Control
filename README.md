@@ -1,7 +1,7 @@
 # EMG Classification for Myoelectric Control
 ## Collaboration with Northwestern MSR, Shirley Ryan AbilityLab, and Coapt, LLC
 
-`Data Analysis` - contains various Jupyter Notebooks which present data trends and information for creating rules in classifying EMG data and relabeling said data. The accompanying `.py` files are the text files for the Jupyter Notebooks. If you would like to use this same format, you will need to install Jupytext to enable editing of notebooks in text files and accurate version control. 
+`Data_Analysis` - contains various Jupyter Notebooks which present data trends and information for creating rules in classifying EMG data and relabeling said data. The accompanying `.py` files are the text files for the Jupyter Notebooks. If you would like to use this same format, you will need to install Jupytext to enable editing of notebooks in text files and accurate version control. 
 
 To install and use Jupytext:
 ```
