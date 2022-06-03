@@ -47,7 +47,38 @@ for i in csv_files:
     df = pd.read_csv(i)
     df = df[df['entryType'] == 0]
     SimonSays.append(df)
+
+
 # -
+
+def consecutive_motion_w_speed(motion_data):
+    """ Finds the number of consecutive motions matched with the speed at each motion.
+    
+    Args: 
+        motion_data - data set of form class and speed (numpy array)
+        
+    Returns:
+        values_nozero - consecutive motions where the value is not equal to 0
+    """
+    values = []
+    i_flag = 0
+    for i in range(1, len(motion_data)):
+        if motion_data[i-1, 0] == motion_data[i, 0]:
+            pass
+        else:
+            values.append(motion_data[i_flag:i, :])
+            i_flag = i
+
+        if i == len(motion_data)-1:
+            values.append(motion_data[i_flag:i+1, :])
+
+    values_nozero = []
+    for value in values:
+        if value[0,0] != 0:
+            values_nozero.append(value)
+            
+    return values_nozero
+
 
 # ## In the Zone
 
@@ -55,26 +86,9 @@ for i in csv_files:
 
 # +
 data = InTheZone[0]
-new_data = data
-motion_data = new_data[['class', 'PostRampSpeed']].to_numpy()
+motion_data = data[['class', 'PostRampSpeed']].to_numpy()
 
-values = []
-i_flag = 0
-for i in range(1, len(motion_data)):
-    if motion_data[i-1, 0] == motion_data[i, 0]:
-        pass
-    else:
-        values.append(motion_data[i_flag:i, :])
-        i_flag = i
-        
-    if i == len(motion_data)-1:
-        values.append(motion_data[i_flag:i+1, :])
-
-values_nozero = []
-for value in values:
-    if value[0,0] != 0:
-        values_nozero.append(value)
-motion_array = np.vstack((values_nozero))
+values_nozero = consecutive_motion_w_speed(motion_data)
 
 plt.figure(figsize=(30,10))
 for i in range(len(values_nozero)):
@@ -142,26 +156,9 @@ plt.show()
 
 # +
 data = InTheZone[0]
-new_data = data
-motion_data = new_data[['class', 'PreRampSpeed']].to_numpy()
+motion_data = data[['class', 'PreRampSpeed']].to_numpy()
 
-values = []
-i_flag = 0
-for i in range(1, len(motion_data)):
-    if motion_data[i-1, 0] == motion_data[i, 0]:
-        pass
-    else:
-        values.append(motion_data[i_flag:i, :])
-        i_flag = i
-        
-    if i == len(motion_data)-1:
-        values.append(motion_data[i_flag:i+1, :])
-
-values_nozero = []
-for value in values:
-    if value[0,0] != 0:
-        values_nozero.append(value)
-motion_array = np.vstack((values_nozero))
+values_nozero = consecutive_motion_w_speed(motion_data)
 
 plt.figure(figsize=(30,10))
 for i in range(len(values_nozero)):
@@ -231,26 +228,9 @@ plt.show()
 
 # +
 data = SimonSays[0]
-new_data = data
-motion_data = new_data[['class', 'PostRampSpeed']].to_numpy()
+motion_data = data[['class', 'PostRampSpeed']].to_numpy()
 
-values = []
-i_flag = 0
-for i in range(1, len(motion_data)):
-    if motion_data[i-1, 0] == motion_data[i, 0]:
-        pass
-    else:
-        values.append(motion_data[i_flag:i, :])
-        i_flag = i
-        
-    if i == len(motion_data)-1:
-        values.append(motion_data[i_flag:i+1, :])
-
-values_nozero = []
-for value in values:
-    if value[0,0] != 0:
-        values_nozero.append(value)
-motion_array = np.vstack((values_nozero))
+values_nozero = consecutive_motion_w_speed(motion_data)
 
 plt.figure(figsize=(30,10))
 for i in range(len(values_nozero)):
@@ -318,26 +298,9 @@ plt.show()
 
 # +
 data = SimonSays[0]
-new_data = data
-motion_data = new_data[['class', 'PreRampSpeed']].to_numpy()
+motion_data = data[['class', 'PreRampSpeed']].to_numpy()
 
-values = []
-i_flag = 0
-for i in range(1, len(motion_data)):
-    if motion_data[i-1, 0] == motion_data[i, 0]:
-        pass
-    else:
-        values.append(motion_data[i_flag:i, :])
-        i_flag = i
-        
-    if i == len(motion_data)-1:
-        values.append(motion_data[i_flag:i+1, :])
-
-values_nozero = []
-for value in values:
-    if value[0,0] != 0:
-        values_nozero.append(value)
-motion_array = np.vstack((values_nozero))
+values_nozero = consecutive_motion_w_speed(motion_data)
 
 plt.figure(figsize=(30,10))
 for i in range(len(values_nozero)):
