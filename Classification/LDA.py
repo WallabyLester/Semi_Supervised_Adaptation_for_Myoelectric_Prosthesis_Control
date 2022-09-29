@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 class LDA:
     def fit(self, X, y):
@@ -32,12 +33,28 @@ class LDA:
         return np.array(preds)
 
 if __name__ == "__main__":
-    data = np.loadtxt("./test_data.csv", delimiter=",", skiprows=1)
-    X = data[:, 0:2]
-    y = data[:, 2]
+    # update ID for specific patient and VirtualArmGames_ for which game session to use
+    data = pd.read_csv("./Data/ID#/VirtualGameData/VirtualArmGames_.csv")
+    class_data = data[['targetClass', 'emgChan1', 'emgChan2', 'emgChan3', 'emgChan4', 'emgChan5', 'emgChan6', 'emgChan7', 'emgChan8']].to_numpy()
+    
+    # separate into lists based on target class
+    values = []
+    i_flag = 0
+    for i in range(1, len(class_data)):
+        if class_data[i-1, 1] == class_data[i, 1]:
+            pass
+        else:
+            values.append(class_data[i_flag:i, :])
+            i_flag = i
 
-    lda = LDA()
-    lda.fit(X, y)
-    preds = lda.predict(X)
+        if i == len(class_data)-1:
+            values.append(class_data[i_flag:i+1, :])
 
-    print(preds)
+    # X = data[:, 0:2]
+    # y = data[:, 2]
+
+    # lda = LDA()
+    # lda.fit(X, y)
+    # preds = lda.predict(X)
+
+    # print(preds)
