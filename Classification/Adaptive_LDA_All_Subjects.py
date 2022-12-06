@@ -468,20 +468,13 @@ for i in range(10):
 plt.errorbar(range(3), [np.mean(unadapted_list), np.mean(adapted_list), np.mean(adaptedwrul_list)], [np.std(unadapted_list)/np.sqrt(len(unadapted_list)), np.std(adapted_list)/np.sqrt(len(adapted_list)), np.std(adaptedwrul_list)/np.sqrt(len(adaptedwrul_list))], fmt='k^', lw=2, capsize=5, markersize=7, markeredgewidth=1)
 # plt.errorbar(range(3), [np.mean(unadapted_list), np.mean(adapted_list), np.mean(adaptedwrul_list)], [np.std(unadapted_list), np.std(adapted_list), np.std(adaptedwrul_list)], fmt='k^', lw=2, capsize=5, markersize=7, markeredgewidth=1)
 plt.xlim(-0.1, 2.1)
-# plt.title("All Subjects Difference Between Last and First Games")
-# plt.ylabel("Change in Error Rate", fontsize=12)
-# plt.xlabel("Models", fontsize=12)
-# plt.xticks(np.arange(3), ['Unadapted', 'Adapted', 'Adapted w/ Rules'])
+plt.title("All Subjects Difference Between Last and First Games")
+plt.ylabel("Change in Error Rate", fontsize=12)
+plt.xlabel("Models", fontsize=12)
+plt.xticks(np.arange(3), ['Unadapted', 'Adapted', 'Adapted w/ Rules'])
 plt.xticks(np.arange(3), labels=[])
 plt.yticks(np.arange(-5, 60, 5), labels=[])
 plt.show()
 # -
-
-# multiple comparisons t test p value
-
-
-test = [44, 0, 6, 14, 12, 12, 22,18,26,15]
-print(np.mean(test))
-print(np.std(test))
 
 
