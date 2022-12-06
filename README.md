@@ -16,6 +16,10 @@ The goal of this project was to utilize the existing EMG sensor device designed 
 
 `Cloud` - contains files for applying the adaptive LDA and rules in a cloud database. 
 
+- Adaptive Cloud Analysis: Performs the same adaptive LDA analysis using cloud based data. Enables sending the updated adaptive model back to the cloud.
+- Cloud LDA Adaptive: Adapted LDA class with fit, prediction, and updating mean and covariance functions. Includes a function for loading data in from virtual game files. Specific to cloud data format.
+- Cloud Rules: Game rules class with base and augmented rules. Specific to cloud data format. 
+
 `Data_Analysis` - contains Jupyter Notebooks which present data trends and information for creating rules in classifying EMG data. The accompanying `.py` files are the text files for the Jupyter Notebooks. 
 
 `Rules` - contains Jupyter Notebooks using the data analysis to find the rules and relabel virtual game data based off of them. The accompanying `.py` files are the text files for the Jupyter Notebooks. Also contains the rules used in classification. 
