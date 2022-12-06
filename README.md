@@ -7,6 +7,13 @@ The goal of this project was to utilize the existing EMG sensor device designed 
 ## Contents
 `Classification` - contains Jupyter Notebooks for applying an adaptive LDA on virtual game data along with comparisons to an unadapted LDA and relabeled data from the applied rules. The accompanying `.py` files are the text files for the Jupyter Notebooks. Also contains the adaptive LDA.
 
+- Adaptive LDA All Subjects: Uses an unadapted LDA, adapted LDA, and adapted LDA with rules on all the subjects. 
+- Adaptive LDA Aug Rule: Performs comparisons using an unadapted LDA, adapted LDA, and adapted LDA with the augmented rule per subject for their given number of games.
+- Adaptive LDA Base Rule: Performs comparisons using an unadapted LDA, adapted LDA, and adapted LDA with the base rule per subject for their given number of games.
+- Adaptive LDA Tested Relabeled: Performs comparisons using an unadapted LDA, adapted LDA, and adapted LDA with the base rule per subject for their given number of games. Tests all three classification models on relabeled data. 
+- LDA: Unadapted LDA class with fit and prediction functions.
+- LDA Adaptive: Adapted LDA class with fit, prediction, and updating mean and covariance functions. Includes a function for loading data in from virtual game files.
+
 `Cloud` - contains files for applying the adaptive LDA and rules in a cloud database. 
 
 `Data_Analysis` - contains Jupyter Notebooks which present data trends and information for creating rules in classifying EMG data. The accompanying `.py` files are the text files for the Jupyter Notebooks. 
