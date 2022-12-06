@@ -18,7 +18,7 @@ The goal of this project was to utilize the existing EMG sensor device designed 
 
 - Adaptive Cloud Analysis: Performs the same adaptive LDA analysis using cloud based data. Enables sending the updated adaptive model back to the cloud.
 - Cloud LDA Adaptive: Adapted LDA class with fit, prediction, and updating mean and covariance functions. Includes a function for loading data in from virtual game files. Specific to cloud data format.
-- Cloud Rules: Game rules class with base and augmented rules. Specific to cloud data format. 
+- Cloud Rules: Game rules class with base and augmented rules. Returns relabeled data sets. Specific to cloud data format. 
 
 `Data_Analysis` - contains Jupyter Notebooks which present data trends and information for creating rules in classifying EMG data. The accompanying `.py` files are the text files for the Jupyter Notebooks. 
 
@@ -28,6 +28,11 @@ The goal of this project was to utilize the existing EMG sensor device designed 
 - One Participant: Initial analysis of preramp speed, postramp speed. motion targets, motion predictions, and raw EMG data for just one participant. 
 
 `Rules` - contains Jupyter Notebooks using the data analysis to find the rules and relabel virtual game data based off of them. The accompanying `.py` files are the text files for the Jupyter Notebooks. Also contains the rules used in classification. 
+
+- Per Subject Rule Changes: Uses the base rule and augmented rule on all subjects to visualize the number of data points being relabeled by the rules.
+- Rule Finding: Uses consecutive motions with speed and MAV RMS of the data to find the rules. 
+- Rule Testing: Uses the base rule and augmented rule on an individual subjects data to test and visualize the effects. 
+- Rules: Game rules class with base and augmented rule functions. Returns relabeled data sets.
 
 ## Jupytext Instructions
 Jupytext was used with the contained Jupyter Notebook to allow for fully synced text files. If you would like to use this same format, you will need to install Jupytext to enable editing of notebooks in text files and clearer version control. 
