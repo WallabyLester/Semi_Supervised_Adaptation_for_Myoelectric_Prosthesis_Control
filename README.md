@@ -22,6 +22,11 @@ The goal of this project was to utilize the existing EMG sensor device designed 
 
 `Data_Analysis` - contains Jupyter Notebooks which present data trends and information for creating rules in classifying EMG data. The accompanying `.py` files are the text files for the Jupyter Notebooks. 
 
+- All Participants: Looks at virtual game data for In the Zone and Simon Says virtual games for all participants. Involves the preramp speed, postramp speed, and consecutive classified motions.
+- All Participants V2: Updated virtual game analysis with normalized results instead of raw.
+- Consecutive Motions: Deep dive into the consecutive motions in the virtual game data in addition to speeds.
+- One Participant: Initial analysis of preramp speed, postramp speed. motion targets, motion predictions, and raw EMG data for just one participant. 
+
 `Rules` - contains Jupyter Notebooks using the data analysis to find the rules and relabel virtual game data based off of them. The accompanying `.py` files are the text files for the Jupyter Notebooks. Also contains the rules used in classification. 
 
 ## Jupytext Instructions
