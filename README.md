@@ -1,4 +1,4 @@
-# Semi_Supervised_Adaptation_for_Myoelectric_Prosthesis_Control
+# Semi-Supervised Adaptation for Myoelectric Prosthesis Control
 ## Collaboration with Northwestern MSR, Shirley Ryan AbilityLab, and Coapt, LLC
 
 ## Overview
