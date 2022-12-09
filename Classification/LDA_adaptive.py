@@ -1,3 +1,19 @@
+"""
+Contains a class for constructing, fitting, and predicting with an 
+adaptive linear discriminant analysis (LDA) model. 
+
+An LDA is often used for supervised classification problems. It 
+estimates the probability that a new input belongs to every existing
+class. The output class is the one with the highest probability. 
+However, training an LDA requires overwriting the previous which 
+doesn't account for past history in the case of EMG classification. 
+
+Adaptation allows for the LDA to be adapted to new data instead of 
+overwriting the previous classifier. Using the previous class means
+and covariances, the LDA can be updated to account for past history
+and the new data. 
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -46,7 +62,7 @@ def load_data(subject):
 
 
 class aLDA:
-    """ Class for an adaptive linear discriminant analysis (LDA).
+    """ Class for an adaptive linear discriminant analysis (LDA) model.
 
     Methods
     -------

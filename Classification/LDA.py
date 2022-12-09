@@ -1,3 +1,14 @@
+"""
+Contains a class for constructing, fitting, and predicting with a
+linear discriminant analysis (LDA) model. 
+
+An LDA is often used for supervised classification problems. It 
+estimates the probability that a new input belongs to every existing
+class. The output class is the one with the highest probability. 
+However, training an LDA requires overwriting the previous which 
+doesn't account for past history in the case of EMG classification.
+"""
+
 import numpy as np
 import pandas as pd
 from pprint import pprint
@@ -9,6 +20,16 @@ def print_array(*args):
     np.set_printoptions(**opt)
 
 class LDA:
+    """ Class for a linear discriminant analysis (LDA) model. 
+
+    Methods
+    -------
+    fit(X, y):
+        Initializes and fits the LDA model.
+
+    predict(X):
+        Predicts on features using the fitted LDA model.
+    """
     def fit(self, X, y):
         self.priors = dict()
         self.means = dict()
