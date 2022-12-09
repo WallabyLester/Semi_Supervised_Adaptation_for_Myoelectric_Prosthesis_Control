@@ -1,3 +1,10 @@
+"""
+Contains a class for relabeling data based on rules.
+
+Includes a base rule and augmented rule described in their respective
+functions. Outputs the relabeled datasets. Data is not included.
+"""
+
 import numpy as np
 from copy import deepcopy
 import pandas as pd
